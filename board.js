@@ -29,7 +29,7 @@ function is_url(str) {
  * @param  {string} str 给定的被测试的字符串
  * @return {boolean}
  */
-function contain_chinese(str) {
+function contains_chinese(str) {
     // body...
 }
 
