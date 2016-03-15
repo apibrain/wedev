@@ -1,7 +1,30 @@
 /**
  * Javascript 常用函数
  */
- 
+
+/*******************************************************
+                        正则表达式
+ *******************************************************/
+
+ /**
+  * 测试指定字符串是否是邮箱地址
+  * @param  {String}  str 给定的字符串
+  * @return {boolean}
+  */
+function is_email(str) {
+    // todo...
+}
+
+/**
+ * 测试指定的字符串是否是合法的URL
+ * @param  {strong}  str 给定的字符串
+ * @return {boolean}
+ */
+function is_url(str) {
+    // todo...
+}
+
+
  // 限制文本框只允许输入整数
  $(document).on('keydown', '.integer_required', function(e) {
 	// Allow: backspace, delete, tab, escape and enter
