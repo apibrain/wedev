@@ -17,11 +17,20 @@ function is_email(str) {
 
 /**
  * 测试指定的字符串是否是合法的URL
- * @param  {strong}  str 给定的字符串
+ * @param  {string}  str 给定的字符串
  * @return {boolean}
  */
 function is_url(str) {
     // todo...
+}
+
+/**
+ * 测试指定的字符串是否包含中文
+ * @param  {string} str 给定的被测试的字符串
+ * @return {boolean}
+ */
+function contain_chinese(str) {
+    // body...
 }
 
 
