@@ -8,11 +8,12 @@
 
  /**
   * 测试指定字符串是否是邮箱地址
-  * @param  {String}  str 给定的字符串
+  * @param  {string}  str 给定的字符串
   * @return {boolean}
   */
 function is_email(str) {
-    // todo...
+    var reg = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+    return reg.test(str);
 }
 
 /**
@@ -21,7 +22,8 @@ function is_email(str) {
  * @return {boolean}
  */
 function is_url(str) {
-    // todo...
+    var reg = /\b(https?):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|‌​]/;
+    return reg.test(str);
 }
 
 /**
@@ -30,7 +32,8 @@ function is_url(str) {
  * @return {boolean}
  */
 function contains_chinese(str) {
-    // body...
+    var reg = /[\u4E00-\u9FA5]/;
+    return reg.test(str);
 }
 
 
