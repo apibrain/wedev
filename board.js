@@ -38,7 +38,7 @@ function contains_chinese(str) {
 
 
 /*******************************************************
-                    一些常用方法
+                     一些常用方法
  *******************************************************/
 /**
  * 获取一个指定范围内的随机数
@@ -90,9 +90,100 @@ function get_rating(rating) {
     return star.substring(5 - rating, 10 - rating);
 }
 
+/**
+ * 对给定的HTML字符串进行转义。如把 > 转义成 &gt;
+ * @param  {string} s 要转义的HTML字符串
+ * @return {string}   转义后的HTML字符串
+ */
+function escape_html(s) {
+    return new Option(s).innerHTML;
+}
+
+/**
+ * 获取一个随机的十六进制颜色字符串
+ * @param  {bool} with_sharp 是否带井号(#)
+ * @return {string}          十六进制颜色
+ */
+function get_random_color(with_sharp) {
+    var hex_color = (~~(Math.random()*(1<<24))).toString(16);
+    return (with_sharp ? '#' : '') + hex_color.pad_left(0, 6);
+}
+
+/**
+ * 获取指定url的查询参数值
+ * @param  {string} name 要查询的参数名
+ * @param  {string} url  要查询的url
+ * @return {string}      查询参数的值
+ */
+function get_query_string(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+
+    // 把url转换成小写
+    url = url.toLowerCase();
+
+    name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();
+
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(url);
+
+    if (!results) {
+        return null;
+    }
+
+    if (!results[2]) {
+        return '';
+    }
+
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+/*******************************************************
+                 对象、字符串、数字、数组扩展
+ *******************************************************/
+ /**
+  * 重复N次字符串
+  * @param  {int} times 要重复输出的次数
+  * @return {string}       重复N次后的字符串
+  */
+String.prototype.repeat = function(times) {
+    times = parseInt(times);
+    return Array(times + 1).join(this);
+}
+
+/**
+ * 用给定的字符左补齐字符串到指定的长度
+ * @param  {string} char   用于补齐的字符
+ * @param  {int} length 要补齐的长度
+ * @return {string}        补齐后的字符串
+ */
+Object.prototype.pad_left = function(char, length) {
+    var _this = (this instanceof String) ? this : this.toString();
+    var current_length = _this.length;
+    if (length <= current_length) {
+        return _this;
+    }
+
+    return (Array(length).join(char) + _this).substr(-length);
+}
+
+/**
+ * 格式化字符串
+ * @return {string} 格式化之后的字符串
+ */
+String.prototype.format = function() {
+    var args = arguments;
+
+    return this.replace(/{(\d+)}/g, function(match, number) {
+        return typeof args[number] != 'undefined' ? args[number] : match;
+    });
+}
+
 /*******************************************************
                     结合 jQuery 操作
  *******************************************************/
+var $ = window.jQuery;
 /**
  * 限制文本框只允许输入整数
  */
@@ -122,3 +213,14 @@ $('#input').keyup(function(e) {
         // or do something...
     }
 });
+
+
+/*******************************************************
+                    一些 js 技巧
+ *******************************************************/
+/**
+ * 模拟 HTTP Redirect 和 链接点击
+ * 来源：http://stackoverflow.com/questions/503093/how-can-i-make-a-page-redirect-using-jquery
+ */
+window.location.replace("http://www.newdomain.com");  // HTTP Redirect
+window.location.href = "http://www.newdomain.com";  // 链接点击
