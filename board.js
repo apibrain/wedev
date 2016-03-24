@@ -63,6 +63,21 @@ function get_random_number(min, max) {
     return min + Math.round(random * range);
 }
 
+/**
+ * 获取一个五分制的评分
+ * @param  {int} rating 评分值
+ * @return {string}     对应评分的五星字符
+ */
+function get_rating(rating) {
+    if (rating > 5 || rating < 0) {
+        throw new Error('数字不在0-5范围内');
+    }
+
+    var star = '★★★★★☆☆☆☆☆';
+
+    return star.substring(5 - rating, 10 - rating);
+}
+
 /*******************************************************
                     结合 jQuery 操作
  *******************************************************/
