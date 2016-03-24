@@ -41,7 +41,7 @@ function contains_chinese(str) {
                     一些常用方法
  *******************************************************/
 /**
- * 获取指定范围内的随机数
+ * 获取一个指定范围内的随机数
  * @param  {int} min 最小数值
  * @param  {int} max 最大数值
  * @return {int}     min 和 max 之间的随机数
@@ -61,6 +61,18 @@ function get_random_number(min, max) {
     var range = max - min;
     var random = Math.random();
     return min + Math.round(random * range);
+}
+
+/**
+ * 获取一个指定长度的有数字和小写字母组成的随机字符串（最多支持16位长度）
+ * @param  {int} length 要获取的随机字符串长度
+ * @return {string}        指定长度的随机字符串
+ */
+function get_random_string(length) {
+    if (length < 1 || length > 16) {
+        throw new Error('长度范围只能是1-16之间');
+    }
+    return Math.random().toString(36).substr(2, length);
 }
 
 /**
