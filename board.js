@@ -181,6 +181,7 @@ String.prototype.capitalize = function() {
     // 4th line
     // 5th line
     // 6th line
+    // 7th line
 }
 
 /**
