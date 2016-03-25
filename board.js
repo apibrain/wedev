@@ -161,9 +161,22 @@ String.prototype.repeat = function(times) {
     return Array(times + 1).join(this);
 }
 
+/**
+ * 把给定字符串所有单词的首字母转换成大写
+ * @return {string} 首字母转换成大写之后的字符串
+ */
 String.prototype.toTitleCase = function() {
     // todo... and to capital
-    // kit jfsd999
+    // 2nd line...
+    // kit jfsd888
+}
+
+/**
+ * 把字符串的所有单词的首字母转换成大写
+ * @return {string} 首字母转换成大写之后的字符串
+ */
+String.prototype.capitalize = function() {
+    //
 }
 
 /**
