@@ -163,6 +163,7 @@ String.prototype.repeat = function(times) {
 
 String.prototype.toTitleCase = function() {
     // todo... and to capital
+    // kit jfsd999
 }
 
 /**
