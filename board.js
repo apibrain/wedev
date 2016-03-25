@@ -176,6 +176,7 @@ String.prototype.toTitleCase = function() {
 String.prototype.capitalize = function() {
     // todo...
     // real123
+    // 3rd line
 }
 
 /**
