@@ -167,7 +167,7 @@ String.prototype.repeat = function(times) {
  */
 String.prototype.toTitleCase = function() {
     // todo... and to capital
-    // 2nd old line at ending...
+    // 2nd old line at toTitleCase function...
     // kit jfsd888
 }
 
