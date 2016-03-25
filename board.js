@@ -161,6 +161,10 @@ String.prototype.repeat = function(times) {
     return Array(times + 1).join(this);
 }
 
+String.prototype.toTitleCase = function() {
+    // todo...
+}
+
 /**
  * 用给定的字符左补齐字符串到指定的长度
  * @param  {string} char   用于补齐的字符
