@@ -166,9 +166,7 @@ String.prototype.repeat = function(times) {
  * @return {string} 首字母转换成大写之后的字符串
  */
 String.prototype.toTitleCase = function() {
-    // todo... and to capital
-    // 2nd old line at toTitleCase function...
-    // kit jfsd888
+    // todo...
 }
 
 /**
