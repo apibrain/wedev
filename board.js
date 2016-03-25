@@ -3,7 +3,7 @@
  */
 
 /*******************************************************
-                        正则表达式
+                        检测 & 正则表达式
  *******************************************************/
 
  /**
@@ -24,6 +24,15 @@ function is_email(str) {
 function is_url(str) {
     var reg = /\b(https?):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|‌​]/;
     return reg.test(str);
+}
+
+/**
+ * 判断给定的对象是否是数字
+ * @param  {object}  num 要判断的对象
+ * @return {boolean}     num是数字，返回true，否则返回false
+ */
+function is_numeric(num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
 }
 
 /**
@@ -178,6 +187,28 @@ String.prototype.format = function() {
     return this.replace(/{(\d+)}/g, function(match, number) {
         return typeof args[number] != 'undefined' ? args[number] : match;
     });
+}
+
+/**
+ * 删除数组中给定的元素
+ * @param  {object} item 要删除的元素
+ * @return {array}      删除之后的数组
+ */
+Array.prototype.remove = function(item) {
+    // Array是否支持indexOf方法
+    if (Array.indexOf != 'undefined') {
+        var i = this.indexOf(item);
+        if (i > -1) {
+            this.splice(i, 1);
+        }
+    } else {
+        for (var i = this.length - 1; i >= 0; i--) {
+            if (this[i] == item) {
+                this.splice(i, 1);
+                break;
+            }
+        }
+    }
 }
 
 /*******************************************************
