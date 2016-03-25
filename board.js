@@ -162,22 +162,11 @@ String.prototype.repeat = function(times) {
 }
 
 /**
- * 把给定字符串所有单词的首字母转换成大写
- * @return {string} 首字母转换成大写之后的字符串
- */
-String.prototype.toTitleCase = function() {
-    // todo...
-}
-
-/**
  * 把字符串的所有单词的首字母转换成大写
  * @return {string} 首字母转换成大写之后的字符串
  */
 String.prototype.capitalize = function() {
     // todo...
-    // real123
-    // 3rd line
-    // 4x
 }
 
 /**
