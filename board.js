@@ -154,7 +154,7 @@ function get_query_string(name, url) {
  /**
   * 重复N次字符串
   * @param  {int} times 要重复输出的次数
-  * @return {string}       重复N次后的字符串
+  * @return {string}    重复N次后的字符串
   */
 String.prototype.repeat = function(times) {
     times = parseInt(times);
