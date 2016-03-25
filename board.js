@@ -162,7 +162,7 @@ String.prototype.repeat = function(times) {
 }
 
 String.prototype.toTitleCase = function() {
-    // todo...
+    // todo... and to capital
 }
 
 /**
