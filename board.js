@@ -12,7 +12,7 @@
   * @return {boolean}
   */
 function is_email(str) {
-    var reg = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+    var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return reg.test(str);
 }
 
@@ -244,6 +244,15 @@ $('#input').keyup(function(e) {
         // or do something...
     }
 });
+
+/**
+ * 判断是否存在给定的对象
+ * @return {int} 存在，返回true；不存在，返回false
+ * @usage if ($(selector).exists()) { ... }
+ */
+jQuery.fn.exists = function() {
+    return this.length > 0;
+}
 
 
 /*******************************************************
