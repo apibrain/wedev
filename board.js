@@ -176,7 +176,7 @@ String.prototype.toTitleCase = function() {
  * @return {string} 首字母转换成大写之后的字符串
  */
 String.prototype.capitalize = function() {
-    //
+    // todo...
 }
 
 /**
