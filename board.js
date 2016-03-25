@@ -177,6 +177,7 @@ String.prototype.capitalize = function() {
     // todo...
     // real123
     // 3rd line
+    // 4x
 }
 
 /**
