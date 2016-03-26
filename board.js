@@ -172,7 +172,7 @@ String.prototype.capitalize = function() {
 /**
  * 用给定的字符左补齐字符串到指定的长度
  * @param  {string} char   用于补齐的字符
- * @param  {int} length 要补齐的长度
+ * @param  {int} length    要补齐的长度
  * @return {string}        补齐后的字符串
  */
 Object.prototype.pad_left = function(char, length) {
