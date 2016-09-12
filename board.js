@@ -272,3 +272,9 @@ jQuery.fn.exists = function() {
  */
 window.location.replace("http://www.newdomain.com");  // HTTP Redirect
 window.location.href = "http://www.newdomain.com";  // 链接点击
+
+/**
+ * 交换2个变量的值（不通过第3个变量）
+ */
+var a = 3, b = 28;
+a = [b, b = a][0];
