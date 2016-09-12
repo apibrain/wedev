@@ -255,7 +255,7 @@ $('#input').keyup(function(e) {
 
 /**
  * 判断是否存在给定的对象
- * @return {int} 存在，返回true；不存在，返回false
+ * @return {bool} 存在，返回true；不存在，返回false
  * @usage if ($(selector).exists()) { ... }
  */
 jQuery.fn.exists = function() {
